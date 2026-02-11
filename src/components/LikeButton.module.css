@@ -1,0 +1,34 @@
+.likeBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    border: 2px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    color: var(--color-text-secondary);
+}
+
+.likeBtn:hover:not(:disabled) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.liked {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: #fff5f2;
+}
+
+.liked:disabled {
+    cursor: default;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,47 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 0.5rem;
+}
+
+.primary {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+.primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+}
+
+.secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-text-secondary);
+    color: var(--color-text-secondary);
+}
+
+.secondary:hover {
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-text-primary);
+    color: var(--color-text-primary);
+}
+
+.google {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.google:hover {
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}

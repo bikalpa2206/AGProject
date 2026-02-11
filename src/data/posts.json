@@ -1,0 +1,42 @@
+[
+  {
+    "id": "travel-1",
+    "slug": "paris-overrated",
+    "title": "Paris: Creating Debt and Eating Snails",
+    "excerpt": "I went to Paris to find love. I found a 15 Euro croissant and a pigeon that attacked me.",
+    "category": "Travel",
+    "date": "2023-10-15",
+    "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80",
+    "content": "Everyone says Paris is the city of love. They forget to mention it's also the city of aggressive pigeons and waiters who look at you like you just insulted their ancestors because you asked for ketchup. The Eiffel Tower is basically a giant metal pylon that you pay to stand under. 10/10 would go again just to complain."
+  },
+  {
+    "id": "travel-2",
+    "slug": "bali-spiritual-awakening",
+    "title": "My 'Spiritual Awakening' in Bali (I Just Got a Tan)",
+    "excerpt": "I did yoga once and drank a coconut. Does this mean I'm enlightened now?",
+    "category": "Travel",
+    "date": "2023-11-02",
+    "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80",
+    "content": "I went to Bali to find myself. I found that myself really likes cheap massages and drinking Bintang by the pool. The monkeys are cute until they steal your sunglasses and demand a ransom. I'm pretty sure one of them works for the local mafia."
+  },
+  {
+    "id": "food-1",
+    "slug": "sushi-mistakes",
+    "title": "I Ate Sushi from a Gas Station So You Don't Have To",
+    "excerpt": "Spoiler alert: It was a bad idea. A very, very bad idea.",
+    "category": "Food",
+    "date": "2023-10-20",
+    "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80",
+    "content": "There are defining moments in life. Graduating content. Getting married. And deciding that the sushi sitting next to the beef jerky at the gas station looks 'fresh enough'. I have seen the face of regret, and it tastes like day-old imitation crab."
+  },
+  {
+    "id": "food-2",
+    "slug": "vegan-burger-trial",
+    "title": "The Vegan Burger That Almost Fooled Me",
+    "excerpt": "It tasted like beef. Or maybe cardbox soaked in beef stock. I'm not sure.",
+    "category": "Food",
+    "date": "2023-11-10",
+    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&q=80",
+    "content": "I tried the new Impossible-Beyond-Miracle-Whatever burger. It bleeds like real meat, which is both impressive and slightly terrifying for a plant. It tasted good, but I still missed the guilt of eating an actual animal."
+  }
+]
