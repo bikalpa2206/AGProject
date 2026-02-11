@@ -16,14 +16,22 @@ const firebaseConfig = {
 // Initialize Firebase
 let app, auth, db;
 
-if (firebaseConfig.apiKey) {
-    app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-    auth = getAuth(app);
-    db = getFirestore(app);
-} else {
-    // If we're building or don't have keys, just mock or leave null
-    // This prevents build crashes when env vars are missing
-    console.warn("Firebase configuration missing, skipping initialization.");
+try {
+    if (firebaseConfig.apiKey &&
+        firebaseConfig.apiKey !== 'undefined' &&
+        !firebaseConfig.apiKey.includes('NEXT_PUBLIC')) { // Basic sanity checks
+
+        app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+        auth = getAuth(app);
+        db = getFirestore(app);
+    } else {
+        console.warn("Firebase API key missing or invalid, skipping initialization.");
+        app = null;
+        auth = null;
+        db = null;
+    }
+} catch (error) {
+    console.error("Firebase initialization failed:", error);
     app = null;
     auth = null;
     db = null;
