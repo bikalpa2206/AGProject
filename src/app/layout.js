@@ -1,16 +1,23 @@
-import { Outfit, Lora } from "next/font/google";
+import { Permanent_Marker, Montserrat, Open_Sans } from "next/font/google"; // turbo
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/lib/AuthContext";
 
-const outfit = Outfit({
+const permanentMarker = Permanent_Marker({
+    weight: "400",
+    subsets: ["latin"],
+    variable: "--font-accent",
+    display: "swap",
+});
+
+const montserrat = Montserrat({
     subsets: ["latin"],
     variable: "--font-heading",
     display: "swap",
 });
 
-const lora = Lora({
+const openSans = Open_Sans({
     subsets: ["latin"],
     variable: "--font-body",
     display: "swap",
@@ -24,7 +31,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${outfit.variable} ${lora.variable}`}>
+            <body className={`${permanentMarker.variable} ${montserrat.variable} ${openSans.variable}`}>
                 <AuthProvider>
                     <Header />
                     <main style={{ minHeight: '80vh' }}>

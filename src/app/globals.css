@@ -1,28 +1,24 @@
 :root {
-  /* Warm & Cozy Palette (Friends/Office Vibe) */
-  --color-bg-primary: #fdfbf7;
-  /* Off-white, paper-like */
-  --color-bg-secondary: #f4efe9;
-  /* Light beige for cards/sections */
-  --color-text-primary: #2c2c2c;
-  /* Soft black for readability */
-  --color-text-secondary: #5a5a5a;
-  /* Dark gray for subtitles */
-  --color-accent: #d84315;
-  /* Burnt orange (Central Perk couch) */
-  --color-accent-hover: #bf360c;
-  --color-highlight: #ffcc80;
-  /* Soft yellow/orange for highlights */
-  --color-border: #e0e0e0;
+  /* We Seek Travel Inspired Palette */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f4f4f4;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #666666;
+  
+  --color-accent: #00A8E8; /* Adventure Blue */
+  --color-accent-hover: #008ebf;
+  
+  --color-border: #eeeeee;
 
   /* Typography */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Lora', serif;
+  --font-accent: var(--font-accent); /* Permanent Marker */
+  --font-heading: var(--font-heading); /* Montserrat */
+  --font-body: var(--font-body); /* Open Sans */
 
   /* Spacing */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
 }
 
 * {
