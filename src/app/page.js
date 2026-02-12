@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '@/components/Button';
 import { getAllPosts } from '@/lib/posts';
 import styles from './page.module.css';
@@ -43,13 +44,17 @@ export default function Home() {
                 <h2 className={styles.sectionTitle}>LATEST RANTS</h2>
 
                 <div className={styles.grid}>
-                    {posts.map(post => (
+                    {posts.map((post, index) => (
                         <Link href={`/blog/${post.slug}`} key={post.id} className={styles.card}>
                             <div className={styles.cardImageContainer}>
-                                <img
+                                <Image
                                     src={post.image}
                                     alt={post.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    priority={index < 3}
                                     className={styles.cardImage}
+                                    style={{ objectFit: 'cover' }}
                                 />
                                 <span className={styles.categoryTag}>{post.category}</span>
                             </div>
