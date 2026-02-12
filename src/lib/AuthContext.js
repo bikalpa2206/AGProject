@@ -30,11 +30,19 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = () => {
+        if (!auth) {
+            console.error("Firebase auth is not initialized. Cannot login.");
+            return Promise.reject(new Error("Authentication is not available."));
+        }
         const provider = new GoogleAuthProvider();
         return signInWithPopup(auth, provider);
     };
 
     const logout = () => {
+        if (!auth) {
+            console.error("Firebase auth is not initialized. Cannot logout.");
+            return Promise.reject(new Error("Authentication is not available."));
+        }
         return signOut(auth);
     };
 

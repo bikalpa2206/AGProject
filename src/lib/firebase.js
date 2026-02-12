@@ -13,28 +13,49 @@ const firebaseConfig = {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
-let app, auth, db;
+// Validate that all required environment variables are present
+const isFirebaseConfigValid = () => {
+    const requiredVars = [
+        'apiKey',
+        'authDomain',
+        'projectId',
+        'storageBucket',
+        'messagingSenderId',
+        'appId'
+    ];
 
-try {
-    if (firebaseConfig.apiKey &&
-        firebaseConfig.apiKey !== 'undefined' &&
-        !firebaseConfig.apiKey.includes('NEXT_PUBLIC')) { // Basic sanity checks
-
-        app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-        auth = getAuth(app);
-        db = getFirestore(app);
-    } else {
-        console.warn("Firebase API key missing or invalid, skipping initialization.");
-        app = null;
-        auth = null;
-        db = null;
+    for (const varName of requiredVars) {
+        const value = firebaseConfig[varName];
+        if (!value || value === 'undefined' || value.includes('NEXT_PUBLIC')) {
+            return false;
+        }
     }
-} catch (error) {
-    console.error("Firebase initialization failed:", error);
-    app = null;
-    auth = null;
-    db = null;
+    return true;
+};
+
+// Initialize Firebase
+let app = null;
+let auth = null;
+let db = null;
+
+// Only initialize Firebase if we have valid configuration
+// This prevents build errors when environment variables aren't set (e.g., during Vercel build)
+if (typeof window !== 'undefined' || process.env.NODE_ENV === 'development') {
+    // Client-side or development: try to initialize
+    if (isFirebaseConfigValid()) {
+        try {
+            app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+            auth = getAuth(app);
+            db = getFirestore(app);
+        } catch (error) {
+            console.error("Firebase initialization failed:", error);
+        }
+    } else {
+        console.warn("Firebase environment variables are not configured. Authentication features will be disabled.");
+    }
+} else {
+    // Server-side build: skip initialization to prevent build errors
+    console.log("Skipping Firebase initialization during build process.");
 }
 
 export { auth, db };
