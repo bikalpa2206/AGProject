@@ -31,6 +31,8 @@ export default function BlogListing() {
 
     return (
         <div className="container" style={{ padding: '4rem 20px' }}>
+            <Link href="/" className={styles.backButton}>← Back to Home</Link>
+
             <h1 className={styles.title}>The Blog</h1>
             <p className={styles.subtitle}>Choose your poison.</p>
 
@@ -59,15 +61,12 @@ export default function BlogListing() {
             {/* Grid */}
             <div className={styles.grid}>
                 {displayedPosts.map(post => (
-                    <div key={post.id} className={styles.card}>
-                        <div style={{ height: '200px', backgroundColor: '#eee', overflow: 'hidden', borderBottom: '1px solid var(--color-border)' }}>
-                            {/* 
-                     RECOMMENDED IMAGE SIZE: 600x400px (Aspect Ratio 3:2)
-                 */}
+                    <Link href={`/blog/${post.slug}`} key={post.id} className={styles.card}>
+                        <div className={styles.cardImageContainer}>
                             <img
                                 src={post.image}
                                 alt={post.title}
-                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                className={styles.cardImage}
                             />
                         </div>
                         <div className={styles.cardContent}>
@@ -75,11 +74,11 @@ export default function BlogListing() {
                             <h3 className={styles.cardTitle}>{post.title}</h3>
                             <p className={styles.date}>{post.date}</p>
                             <p className={styles.cardExcerpt}>{post.excerpt}</p>
-                            <Link href={`/blog/${post.slug}`} className={styles.readMore}>
+                            <span className={styles.readMore}>
                                 Read More →
-                            </Link>
+                            </span>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

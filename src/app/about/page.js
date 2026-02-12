@@ -17,6 +17,8 @@ export default function About() {
 
     return (
         <div className="container" style={{ padding: '4rem 20px', maxWidth: '800px' }}>
+            <Link href="/" className={styles.backButton}>← Back to Home</Link>
+
             <h1 className={styles.title}>The "About Me" Section...</h1>
             <p className={styles.subtitle}>(where I pretend to be interesting)</p>
 

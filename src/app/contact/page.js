@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { useBackground } from '@/lib/BackgroundContext';
 import { useState } from 'react';
 import Button from '@/components/Button';
@@ -25,6 +26,8 @@ export default function Contact() {
 
     return (
         <div className="container" style={{ padding: '4rem 20px', maxWidth: '600px' }}>
+            <Link href="/" className={styles.backButton}>← Back to Home</Link>
+
             <h1 className={styles.title}>Contact Me</h1>
             <p className={styles.subtitle}>
                 Have a complaint? A suggestion? A burning desire to tell me I'm wrong?

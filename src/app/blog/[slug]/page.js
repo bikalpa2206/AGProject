@@ -23,7 +23,7 @@ export default async function BlogPost({ params }) {
 
     return (
         <div className="container" style={{ padding: '4rem 20px', maxWidth: '800px' }}>
-            <Link href="/blog" className={styles.backLink}>← Back to Rants</Link>
+            <Link href="/" className={styles.backLink}>← Back to Home</Link>
 
             <article className={styles.article}>
                 {/* Header */}
@@ -34,15 +34,14 @@ export default async function BlogPost({ params }) {
                 </header>
 
                 {/* Feature Image */}
-                <div className={styles.imagePlaceholder}>
+                <div className={styles.imageContainer}>
                     <Image
                         src={post.image}
                         alt={post.title}
                         width={1200}
-                        height={600}
+                        height={675}
                         priority
                         className={styles.featureImage}
-                        style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: 'var(--radius-md)' }}
                     />
                 </div>
 
