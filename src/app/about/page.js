@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from 'react';
 import { useBackground } from '@/lib/BackgroundContext';
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.css';
 
